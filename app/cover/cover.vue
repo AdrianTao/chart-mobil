@@ -8,14 +8,14 @@
 		</div>
 
 		<div class="cover-title">
-			<span>上海卓太实业</span><br>
-			<span>中转站</span>
+			<span>{{stationName}}</span><br>
+			<span>{{stationType}}</span>
 		</div>
 
 		<div class="cover-subtitle">
-			<span>日数据统计</span><br>
+			<span>{{chartType}}</span><br>
 			<div :style="{margin: '22px 10px', 'border-top': '2px solid #000', width: '20px'}"></div>
-			<span>2017-8-1</span>
+			<span>{{chartDate}}</span>
 		</div>
 
 		<div 
@@ -28,12 +28,35 @@
 
 <script>
 import util from '../util'
+import testdata from '../testdata.json'
 
 export default{
 	data () {
 		return {
-			screenHeight: util.getWindowHeight()
+			screenHeight: util.getWindowHeight(),
+			stationName: '',
+			stationType: '',
+			chartDate: '',
+			chartType: ''
 		}
+	},
+	methods: {
+		init () {
+			try {
+				this.stationName = testdata.data.station.name
+				this.stationType = testdata.data.station.scope ? '区域' : '中转站'
+				this.chartDate = testdata.data.station.date
+				this.chartType = testdata.data.station.type === 'day' ? '日数据统计' : '月数据统计'
+			} catch (e) {
+				this.stationName = '中国xxxxxx'
+				this.stationType = 'xxx'
+				this.chartDate = '2017-xx-xx'
+				this.chartType = 'xxxxx'
+			}
+		}
+	},
+	mounted () {
+		this.init()
 	}
 }
 </script>

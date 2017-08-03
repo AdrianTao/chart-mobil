@@ -7,13 +7,7 @@ Vue.use(Vuex)
 
 // 按功能分模块引入
 export default new Vuex.Store({
-	state: {
-		
-	},
-	mutations: {
-		
-	},
-	actions: {
-    
+  modules: {
+   
   }
 })

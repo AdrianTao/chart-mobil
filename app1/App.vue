@@ -1,20 +1,13 @@
 <template>
 	<div id="app">
-		<cover></cover>
-		<test></test>
+		<router-view></router-view>
 	</div>
 </template>
 
 <script>
-import cover from './cover/cover.vue'
-import test from './test/test.vue'
-import chart from './chart/chart.vue'
-
 export default {
 	components: {
-		'cover': cover,
-		'test': test,
-		'chart': chart,
+
 	},
 	data () {
 		return {
@@ -23,12 +16,11 @@ export default {
 	},
   methods: {
 		init () {
-			
+
     },
   },
 	mounted () {
 		this.init()
-		
 	},
   watch: {
   	$route (to, from) {

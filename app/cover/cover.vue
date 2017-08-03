@@ -1,0 +1,72 @@
+<template>
+	<div 
+		id="cover"
+		:style="{'width': '100%', 'height': screenHeight + 'px'}"
+	>
+		<div class="cover-logo">
+			<span>provide by zealtec</span>
+		</div>
+
+		<div class="cover-title">
+			<span>上海卓太实业</span><br>
+			<span>中转站</span>
+		</div>
+
+		<div class="cover-subtitle">
+			<span>日数据统计</span><br>
+			<div :style="{margin: '22px 10px', 'border-top': '2px solid #000', width: '20px'}"></div>
+			<span>2017-8-1</span>
+		</div>
+
+		<div 
+			style="position: absolute;top: 10%;bottom: 10%;left: 50%;display: block;width: 1px;border-left: 2px dashed #707070;" 
+		></div>
+
+		<div :style="{position: 'absolute', bottom: '10%', left: '50%', 'margin-left': '10px', display: 'block', width:'1px', height: '100px', 'border-left': '5px solid #000'}"></div>
+	</div>
+</template>
+
+<script>
+import util from '../util'
+
+export default{
+	data () {
+		return {
+			screenHeight: util.getWindowHeight()
+		}
+	}
+}
+</script>
+
+<style>
+#cover {
+	background: #EAEAEC;
+	color: #000;
+}
+.cover-logo {
+	position: absolute;
+	top: 10%;
+	left: 50%;
+	margin-left: 10px;
+	font-size: 24px;
+	border-top: 5px solid #000;
+}
+.cover-title {
+	position: absolute;
+	top: 35%;
+	right: 50%;
+	text-align: right;
+	margin-right: 10px;
+	font-size: 60px;
+	border-top: 5px solid #000;
+}
+.cover-subtitle {
+	position: absolute;
+  padding-top: 10px;
+	top: 35%;
+	left: 50%;
+	margin-left: 10px;
+	font-size: 40px;
+	border-top: 2px dashed #707070;
+}
+</style>
